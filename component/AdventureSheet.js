@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { messages } from '../utility/localization';
 import { rollDie } from '../utility/functions';
+import Inventory from './Inventory';
 
 export default function AdventureSheet() {
     const [initialSkill, setInitialSkill] = useState(6);
@@ -54,7 +55,7 @@ export default function AdventureSheet() {
                 }}
             />
             <Button onPress={() => setDieRollResult(rollDie(1))} title={`${messages.roll} 🎲: ${dieRollResult}`}></Button>
-            <Text style={styles.title}>{messages.inventory}</Text>
+            <Inventory/>
         </View>
     );
 }
