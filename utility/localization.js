@@ -6,13 +6,17 @@ export const messages = new LocalizedStrings({
         skill: "Skill",
         stamina: "Stamina",
         luck: "Luck",
-        inventory: "Inventory"
+        inventory: "Inventory",
+        roll: "Roll",
+        newGame: "New Game"
     },
     cz: {
         adventureSheet: "Průvodní listina",
         skill: "Umění Boje",
         stamina: "Stamina",
         luck: "Štěstí",
-        inventory: "Inventář"
+        inventory: "Inventář",
+        roll: "Hodit",
+        newGame: "Nová Hra"
     }
 });

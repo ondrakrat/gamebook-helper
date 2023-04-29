@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { useState } from 'react';
 
-import { messages } from '../constants/localization';
+import { messages } from '../utility/localization';
+import { rollDie } from '../utility/functions';
 
 export default function AdventureSheet() {
     const [initialSkill, setInitialSkill] = useState(6);
@@ -10,6 +11,7 @@ export default function AdventureSheet() {
     const [skill, setSkill] = useState(initialSkill);
     const [stamina, setStamina] = useState(initialStamina);
     const [luck, setLuck] = useState(initialLuck);
+    const [dieRollResult, setDieRollResult] = useState(0);
     return (
         <View>
             <Text style={styles.title}>{messages.adventureSheet}</Text>
@@ -37,6 +39,21 @@ export default function AdventureSheet() {
                     {changeAttribute(luck, setLuck, 1)}
                 </View>
             </View>
+            <Button 
+                title={messages.newGame}
+                onPress={() => {
+                    let newSkill = 6 + rollDie();
+                    setInitialSkill(newSkill);
+                    setSkill(newSkill);
+                    let newStamina = 12 + rollDie(2);
+                    setInitialStamina(newStamina);
+                    setStamina(newStamina);
+                    let newLuck = 6 + rollDie()
+                    setInitialLuck(newLuck);
+                    setLuck(newLuck);
+                }}
+            />
+            <Button onPress={() => setDieRollResult(rollDie(1))} title={`${messages.roll} 🎲: ${dieRollResult}`}></Button>
             <Text style={styles.title}>{messages.inventory}</Text>
         </View>
     );
@@ -65,5 +82,5 @@ const styles = StyleSheet.create({
     skillValue: {
         paddingHorizontal: '3px',
         fontWeight: 'bold',
-    }
+    },
 });

@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
-import { messages } from './constants/localization';
+import { messages } from './utility/localization';
 
 import AdventureSheet from './component/AdventureSheet';
 
