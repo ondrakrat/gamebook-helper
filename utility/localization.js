@@ -8,7 +8,8 @@ export const messages = new LocalizedStrings({
         luck: "Luck",
         inventory: "Inventory",
         roll: "Roll",
-        newGame: "New Game"
+        newGame: "New Game",
+        combat: "Combat"
     },
     cz: {
         adventureSheet: "Průvodní listina",
@@ -17,6 +18,7 @@ export const messages = new LocalizedStrings({
         luck: "Štěstí",
         inventory: "Inventář",
         roll: "Hodit",
-        newGame: "Nová Hra"
+        newGame: "Nová Hra",
+        combat: "Souboj"
     }
 });

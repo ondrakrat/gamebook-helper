@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useState } from 'react';
 import { messages } from './utility/localization';
 
 import AdventureSheet from './component/AdventureSheet';
+import Combat from './component/Combat';
 
 const defaultLocale = localStorage['locale'] ? localStorage['locale'] : 'cz'; // English is default locale if none is set
 const localeList = [
@@ -31,6 +32,7 @@ export default function App() {
             }
         </select>
       <AdventureSheet />
+      <Combat initialSkill={6} initialStamina={10} />
       <StatusBar style="auto" />
     </View>
   );
